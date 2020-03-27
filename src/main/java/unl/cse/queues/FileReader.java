@@ -12,7 +12,7 @@ public class FileReader {
 	public void readFile(String fileName) {
 		try {
 			Scanner s = new Scanner(new File(fileName));
-			while(s.hasNext()) {
+			while(s.hasNextLine()) {
 				String line = s.nextLine();
 				//TODO: do something with line
 			}
@@ -40,16 +40,13 @@ public class FileReader {
 					String words[] = line.split("\\s+");
 					StringBuilder subLine = new StringBuilder();
 					for(String w : words) {
-						if( (w.length() + subLine.length() + 1) < maxCols) {
-							subLine.append(w);
-							subLine.append(" ");
-						} else {
+						if ((w.length() + subLine.length() + 1) >= maxCols) {
 							sb.append(subLine.toString());
 							sb.append("\n");
 							subLine = new StringBuilder();
-							subLine.append(w);
-							subLine.append(" ");
 						}
+						subLine.append(w);
+						subLine.append(" ");
 					}
 					sb.append(subLine);
 					sb.append("\n");
