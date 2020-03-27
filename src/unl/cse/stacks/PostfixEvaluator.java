@@ -42,7 +42,7 @@ public class PostfixEvaluator {
      * @param expression
      * @return
      */
-    private double evaluateExpression(String expression) {
+    double evaluateExpression(String expression) {
 
     	String values[] = expression.split("\\s+");
     	for(String v : values) {

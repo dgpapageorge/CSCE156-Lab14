@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class JsonValidator {
 
-	public static void validate(String jsonString) {
+	public static boolean isValidJSON(String jsonString) {
 		//TODO: implement this function
 	}
 	
@@ -24,16 +24,16 @@ public class JsonValidator {
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-		while(s.hasNext()) {
+		while(s.hasNextLine()) {
 			sb.append(s.nextLine());
 		}
 		s.close();
 		return sb.toString();
 	}
 	
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		String jsonFileName = "data/data001.json";
 		String jsonString = getFileContents(jsonFileName);
-		validate(jsonString);
+		System.out.println(isValidJSON(jsonString) ? "Valid" : "Invalid");
 	}
 }
