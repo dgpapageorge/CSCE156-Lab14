@@ -28,7 +28,7 @@ public class JsonValidatorTests {
         assertFalse(JsonValidator.isValidJSON("]["), "The brackets are reversed, making this an invalid JSON string");
         assertFalse(JsonValidator.isValidJSON("{[{[}]}"), "The center bracket is unmatched, making this an invalid JSON string");
         assertFalse(JsonValidator.isValidJSON("{[][][]"), "The first bracket is unmatched, making this an invalid JSON string");
-        assertFalse(JsonValidator.isValidJSON("{}{}{}{}{}{}{}{}[][][]["), , "The last bracket is unmatched, making this an invalid JSON string");
+        assertFalse(JsonValidator.isValidJSON("{}{}{}{}{}{}{}{}[][][]["), "The last bracket is unmatched, making this an invalid JSON string");
     }
 
     /**
