@@ -39,7 +39,7 @@ public class JsonValidatorTests {
         assertTrue(JsonValidator.isValidJSON("[\"\"]"), "The brackets and quotes are balanced, making this a valid JSON string");
         assertTrue(JsonValidator.isValidJSON("\"{\""), "The brackets and quotes are balanced, making this a valid JSON string");
         assertTrue(JsonValidator.isValidJSON("{\"\"}"), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertFalse(JsonValidator.isValidJSON("\"{{{\""), "The brackets and quotes are balanced, making this a valid JSON string");
+        assertTrue(JsonValidator.isValidJSON("\"{{{\""), "The brackets and quotes are balanced, making this a valid JSON string");
         assertTrue(JsonValidator.isValidJSON("\"\\\"{\""), "The brackets and quotes are balanced, making this a valid JSON string");
         assertTrue(JsonValidator.isValidJSON("\"{[{[}]}\""), "The brackets and quotes are balanced, making this a valid JSON string");
         assertTrue(JsonValidator.isValidJSON("{\"{[{[}]}\"\"\"\"{{{\"}"), "The brackets and quotes are balanced, making this a valid JSON string");
