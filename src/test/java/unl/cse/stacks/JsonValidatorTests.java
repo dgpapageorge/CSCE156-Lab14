@@ -30,27 +30,4 @@ public class JsonValidatorTests {
         assertFalse(JsonValidator.isValidJSON("{[][][]"), "The first bracket is unmatched, making this an invalid JSON string");
         assertFalse(JsonValidator.isValidJSON("{}{}{}{}{}{}{}{}[][][]["), "The last bracket is unmatched, making this an invalid JSON string");
     }
-
-    /**
-     * Test the extra portion of the JSON validator
-     */
-    @Test
-    void quotationExtraTest(){
-        assertTrue(JsonValidator.isValidJSON("[\"\"]"), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("\"{\""), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("{\"\"}"), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("\"{{{\""), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("\"\\\"{\""), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("\"{[{[}]}\""), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("{\"{[{[}]}\"\"\"\"{{{\"}"), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("{[{{{{{{{{{\"\"}}}}}}}}}]}"), "The brackets and quotes are balanced, making this a valid JSON string");
-        assertTrue(JsonValidator.isValidJSON("{\"\\\"\\\"\\\"\\\"\\\"\\\"\"}"), "The brackets and quotes are balanced, making this a valid JSON string");
-
-        assertFalse(JsonValidator.isValidJSON("\""), "Unbalanced quote mark");
-        assertFalse(JsonValidator.isValidJSON("[\"]"), "Unbalanced quote mark");
-        assertFalse(JsonValidator.isValidJSON("{}\""), "Unbalanced quote mark");
-        assertFalse(JsonValidator.isValidJSON("\"\\\""), "Unbalanced quote mark (The second quote is escaped)");
-        assertFalse(JsonValidator.isValidJSON("\"{{{\"]"), "The last array bracket is unmatched");
-        assertFalse(JsonValidator.isValidJSON("\"\"{}{}\""), "Unmatched quote mark");
-    }
 }
