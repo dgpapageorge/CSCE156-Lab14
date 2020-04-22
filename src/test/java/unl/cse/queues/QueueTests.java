@@ -2,54 +2,61 @@ package unl.cse.queues;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import unl.cse.stacks.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class QueueTests {
 
-	Queue<String> testQueue;
+    Queue<String> testQueue;
 
-	@BeforeEach
-	void stackSetup() {
-		testQueue = new Queue<>();
-	}
+    /**
+     * Setup a {@link Queue} object for use in each test method
+     */
+    @BeforeEach
+    void queueSetup() {
+        testQueue = new Queue<>();
+    }
 
-	@Test
-	void queueTest() {
-		// isEmpty - returning true
-		assertTrue(testQueue.isEmpty());
+    /**
+     * Test that the implementation of {@link Queue}'s methods function correctly
+     */
+    @Test
+    void queueTest() {
+        // isEmpty - returning true
+        assertTrue(testQueue.isEmpty(), "Queues should start off empty");
+        assertEquals(0, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 0));
 
-		// Push
-		testQueue.enqueue("Test");
-		assertEquals(1, testQueue.size());
+        // Push
+        testQueue.enqueue("Test");
+        assertEquals(1, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 1));
 
-		testQueue.enqueue("CSCE");
-		assertEquals(2, testQueue.size());
+        testQueue.enqueue("CSCE");
+        assertEquals(2, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 2));
 
-		testQueue.enqueue("156");
-		assertEquals(3, testQueue.size());
+        testQueue.enqueue("156");
+        assertEquals(3, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 3));
 
-		testQueue.enqueue("156");
-		assertEquals(4, testQueue.size());
+        testQueue.enqueue("156");
+        assertEquals(4, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 4));
 
-		// isEmpty - returning false
-		assertFalse(testQueue.isEmpty());
+        // isEmpty - returning false
+        assertFalse(testQueue.isEmpty(), "Queue should not be empty at this point");
 
-		// Dequeue
-		assertEquals("Test", testQueue.dequeue());
-		assertEquals("CSCE", testQueue.dequeue());
-		assertEquals("156", testQueue.dequeue());
-		assertEquals("156", testQueue.dequeue());
+        // Dequeue
+        assertEquals("Test", testQueue.dequeue(), "Queue returned out of order");
+        assertEquals("CSCE", testQueue.dequeue(), "Queue returned out of order");
+        assertEquals("156", testQueue.dequeue(), "Queue returned out of order");
+        assertEquals("156", testQueue.dequeue(), "Queue returned out of order");
 
-		try {
-			// Attempt to dequeue from an empty queue
-			// This permits returning null or throwing an exception
-			assertNull(testQueue.dequeue());
-		} catch (Exception ignored) {
-		}
+        try {
+            // Attempt to dequeue from an empty queue
+            // This permits returning null or throwing an exception
+            assertNull(testQueue.dequeue(), "Queue return should be null or throw an exception");
+        } catch (Exception ignored) {}
 
-		// isEmpty - returning true
-		assertTrue(testQueue.isEmpty());
-	}
+        // isEmpty - returning true
+        assertTrue(testQueue.isEmpty(), "Queue should now be empty");
+    }
 }

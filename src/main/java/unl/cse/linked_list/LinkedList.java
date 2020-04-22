@@ -9,7 +9,7 @@ public class LinkedList<T> implements Iterable<T> {
 	
 	public void addElementToHead(T item) {
 		if(item == null)
-			throw new IllegalArgumentException("This LinkedList impelmentation does not allow null elements");
+			throw new IllegalArgumentException("This LinkedList implementation does not allow null elements");
 		Node<T> newHead = new Node<T>(item);
 		if(this.tail == null) {
 			this.head = newHead;
@@ -51,7 +51,7 @@ public class LinkedList<T> implements Iterable<T> {
 	
 	public void addElementToTail(T item) {
 		if(item == null)
-			throw new IllegalArgumentException("This LinkedList impelmentation does not allow null elements");
+			throw new IllegalArgumentException("This LinkedList implementation does not allow null elements");
 		Node<T> newTail = new Node<T>(item);
 		if(this.tail == null) {
 			this.tail = newTail;
