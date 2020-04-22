@@ -1,4 +1,5 @@
-{"widget": {
+{
+  "widget": {
     "debug": "on",
     "window": {
         "title": "Sample Konfabulator Widget",
@@ -24,4 +25,5 @@
         "alignment": "center",
         "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
     }
-}}    
+  }
+}    
