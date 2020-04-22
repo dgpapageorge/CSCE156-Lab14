@@ -27,6 +27,8 @@ public class StackTests {
     void stackTest() {
         // isEmpty - returning true
         assertTrue(testStack.isEmpty(), "Stacks should start empty");
+        assertEquals(0, testStack.size(), String.format("size() returned %d for a stack with %d elements", testStack.size(), 0));
+
 
         // Push
         testStack.push("Test");

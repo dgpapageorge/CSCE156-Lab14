@@ -26,19 +26,20 @@ public class QueueTests {
     void queueTest() {
         // isEmpty - returning true
         assertTrue(testQueue.isEmpty(), "Queues should start off empty");
+        assertEquals(0, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 0));
 
         // Push
         testQueue.enqueue("Test");
-        assertEquals(1, testQueue.size(), String.format("size() returned %d for a stack with %d elements", testQueue.size(), 1));
+        assertEquals(1, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 1));
 
         testQueue.enqueue("CSCE");
-        assertEquals(2, testQueue.size(), String.format("size() returned %d for a stack with %d elements", testQueue.size(), 2));
+        assertEquals(2, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 2));
 
         testQueue.enqueue("156");
-        assertEquals(3, testQueue.size(), String.format("size() returned %d for a stack with %d elements", testQueue.size(), 3));
+        assertEquals(3, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 3));
 
         testQueue.enqueue("156");
-        assertEquals(4, testQueue.size(), String.format("size() returned %d for a stack with %d elements", testQueue.size(), 4));
+        assertEquals(4, testQueue.size(), String.format("size() returned %d for a queue with %d elements", testQueue.size(), 4));
 
         // isEmpty - returning false
         assertFalse(testQueue.isEmpty(), "Queue should not be empty at this point");
