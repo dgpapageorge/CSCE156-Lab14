@@ -1,8 +1,7 @@
-package unl.cse.queues;
+package unl.cse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import unl.cse.stacks.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,4 +1,4 @@
-package unl.cse.queues;
+package unl.cse;
 
 import java.io.File;
 import java.io.FileNotFoundException;

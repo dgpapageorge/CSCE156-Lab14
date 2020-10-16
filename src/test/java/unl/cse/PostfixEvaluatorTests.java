@@ -1,4 +1,4 @@
-package unl.cse.stacks;
+package unl.cse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
