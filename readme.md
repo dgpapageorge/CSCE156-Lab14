@@ -211,7 +211,10 @@ type.  Also, brackets of different types must not overlap. For example,
 * Test your programs using the provided JUnit test suite(s).  Fix any
 errors and completely debug your programs.
 * Submit the following files through webhandin:
-  * `TODO.java`
+  * `Stack.java`
+  * `Queue.java`
+  * `PostfixEvaluator.java`
+  * `JsonValidator.java`
 * Run the grader and verify the output to complete your lab.
 
 ## Advanced Activity (optional)
