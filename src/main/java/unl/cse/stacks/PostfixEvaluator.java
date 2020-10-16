@@ -22,18 +22,21 @@ public class PostfixEvaluator {
     }
     
     private String evaluate(String a, String b, String op) {
-    	Double d1 = Double.parseDouble(a);
-    	Double d2 = Double.parseDouble(b);
-    	if(op.equals("+"))
-    		return new Double(d1+d2).toString();
-    	else if(op.equals("-"))
-    		return new Double(d1-d2).toString();
-    	else if(op.equals("*"))
-    		return new Double(d1*d2).toString();
-    	else if(op.equals("/"))
-    		return new Double(d1/d2).toString();
-    	else
+    	double d1 = Double.parseDouble(a);
+    	double d2 = Double.parseDouble(b);
+    	double result;
+    	if(op.equals("+")) {
+    		result = d1 + d2;
+    	} else if(op.equals("-")) {
+    		result = d1 - d2;
+    	} else if(op.equals("*")) {
+    		result = d1 * d2;
+    	} else if(op.equals("/")) {
+    		result = d1 / d2;
+    	} else {
     		throw new IllegalStateException("Unrecognized operator: "+op);
+    	}
+    	return Double.toString(result);
     }
 
     /**
@@ -72,6 +75,7 @@ public class PostfixEvaluator {
         System.out.print("Please enter the Arithmatic Expression (Postfix form) to evaluate: ");
         Scanner myScanner = new Scanner(System.in);
         String expression = myScanner.nextLine();
+        myScanner.close();
         System.out.println(expression);
         System.out.println("Result: " + postfixEvaluator.evaluateExpression(expression));
     }

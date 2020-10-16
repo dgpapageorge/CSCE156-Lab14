@@ -1,6 +1,6 @@
 package unl.cse.queues;
 
-import unl.cse.linked_list.LinkedList;
+import java.util.LinkedList;
 
 public class Queue<T> {
 

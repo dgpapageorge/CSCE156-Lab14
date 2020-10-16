@@ -5,15 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * A basic JSON validator. This validator only checks that the JSON 
- * file is well-balanced: that all opening brackets have a corresponding 
- * closing bracket and that they follow legal nesting rules.
+ * A basic JSON validator. This validator only checks that the JSON file is
+ * well-balanced: that all opening brackets have a corresponding closing bracket
+ * and that they follow legal nesting rules.
  * 
  */
 public class JsonValidator {
 
 	public static boolean isValidJSON(String jsonString) {
 		// TODO: implement this function
+		return false;
 	}
 
 	public static String getFileContents(String fileName) {

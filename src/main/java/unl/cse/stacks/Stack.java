@@ -1,6 +1,6 @@
 package unl.cse.stacks;
 
-import unl.cse.linked_list.LinkedList;
+import java.util.LinkedList;
 
 public class Stack<T> {
 
