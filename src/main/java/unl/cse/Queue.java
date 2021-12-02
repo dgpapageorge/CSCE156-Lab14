@@ -7,21 +7,20 @@ public class Queue<T> {
 	private final LinkedList<T> list = new LinkedList<T>();
 	
 	public T dequeue() {
-		//TODO: implement this method
-		return null;
+		return list.removeFirst();
 	}
 	
 	public void enqueue(T item) {
-		//TODO: implement this method
+		list.addLast(item);
 	}
 
 	public int size() {
-		//TODO: implement this method
-		return -1;
+		return list.size();
 	}
 	
 	public boolean isEmpty() {
-		//TODO: implement this method
+		if (size() == 0)
+			return true;
 		return false;
 	}
 	

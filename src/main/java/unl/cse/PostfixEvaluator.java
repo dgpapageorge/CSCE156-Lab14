@@ -46,8 +46,10 @@ public class PostfixEvaluator {
      * @return
      */
     double evaluateExpression(String expression) {
-
     	String values[] = expression.split("\\s+");
+    	String num1 = "";
+    	String num2 = "";
+    	String op = "";
     	for(String v : values) {
     		/*
     		 * TODO: implement this method
@@ -58,6 +60,14 @@ public class PostfixEvaluator {
     		 *   Else
     		 *      push the operand (number) onto the stack
     		 */
+    		if (!OPERATORS.contains(v))
+    			stack.push(v);
+    		if (OPERATORS.contains(v))
+    		{
+    			num1 = stack.pop();
+        		num2 = stack.pop();
+    			stack.push(this.evaluate(num2,num1,v));
+    		}
     	}
     	//At this point, the final result should be on the top of the stack,
     	//we pop it off, parse it and return the result

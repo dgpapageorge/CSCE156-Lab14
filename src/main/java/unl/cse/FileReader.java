@@ -14,7 +14,7 @@ public class FileReader {
 			Scanner s = new Scanner(new File(fileName));
 			while(s.hasNextLine()) {
 				String line = s.nextLine();
-				//TODO: do something with line
+				lines.enqueue(line);
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

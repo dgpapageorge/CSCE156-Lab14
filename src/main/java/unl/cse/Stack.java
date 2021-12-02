@@ -7,21 +7,20 @@ public class Stack<T> {
 	private final LinkedList<T> list = new LinkedList<T>();
 	
 	public T pop() {
-		//TODO: implement this method
-		return null;
+		return list.removeFirst();
 	}
 	
 	public void push(T item) {
-		//TODO: implement this method
+		list.addFirst(item);
 	}
 
 	public int size() {
-		//TODO: implement this method
-		return -1;
+		return list.size();
 	}
 	
 	public boolean isEmpty() {
-		//TODO: implement this method
+		if (size() == 0)
+			return true;
 		return false;
 	}
 	
